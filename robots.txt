@@ -1,0 +1,5 @@
+# https://cinnamonchalet.com robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://cinnamonchalet.com/sitemap.xml
