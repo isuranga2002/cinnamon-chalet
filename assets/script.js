@@ -143,7 +143,7 @@ Please let me know if you have availability. Thank you!`;
 }
 
 /**
- * Contact Form - WhatsApp Integration
+ * Contact Form - Email (mailto) Integration
  */
 function initContactForm() {
   const contactForm = document.getElementById('contact-form');
@@ -157,28 +157,33 @@ function initContactForm() {
     const subject = document.getElementById('contact-subject')?.value || '';
     const message = document.getElementById('contact-message')?.value || '';
 
-    // Create WhatsApp message
-    const whatsappMessage = `Hello Cinnamon Chalet! 🏡
+    // Email address to send to
+    const toEmail = 'cinnamonchalet33@gmail.com';
 
-*New Inquiry*
+    // Create email subject
+    const emailSubject = `${subject} - Inquiry from ${name}`;
 
-👤 Name: ${name}
-📧 Email: ${email}
-📋 Subject: ${subject}
+    // Create email body
+    const emailBody = `Hello Cinnamon Chalet,
 
-💬 Message:
+New Inquiry
+
+Name: ${name}
+Email: ${email}
+Subject: ${subject}
+
+Message:
 ${message}
 
-Looking forward to hearing from you!`;
+---
+Sent from Cinnamon Chalet Website Contact Form`;
 
-    // WhatsApp phone number
-    const phone = '94774005317';
+    // Encode for mailto URL
+    const encodedSubject = encodeURIComponent(emailSubject);
+    const encodedBody = encodeURIComponent(emailBody);
 
-    // Encode message for URL
-    const encodedMessage = encodeURIComponent(whatsappMessage);
-
-    // Open WhatsApp
-    window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
+    // Open default email client
+    window.location.href = `mailto:${toEmail}?subject=${encodedSubject}&body=${encodedBody}`;
   });
 }
 
