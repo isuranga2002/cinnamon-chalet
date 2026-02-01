@@ -3,7 +3,7 @@
  */
 
 const CHAT_CONFIG = {
-    apiKey: 'AIzaSyDnkwjT0z0zC5pDi95znTtSuFDZmPFruPo',
+    apiKey: 'AIzaSyByK1_P19DTqkbrop4qCt-UwwhISwZx_Nw',
     models: ['gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-2.0-flash'],
     baseUrl: 'https://generativelanguage.googleapis.com/v1/models/',
     villaInfo: `
