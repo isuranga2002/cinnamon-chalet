@@ -7,8 +7,8 @@
   --chat-secondary: var(--color-secondary, #2d4a3e);
   --chat-bg: var(--color-white, #ffffff);
   --chat-text: var(--color-gray-700, #404040);
-  --chat-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  --chat-border-radius: 16px;
+  --chat-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --chat-border-radius: 20px;
 }
 
 /* Chat Floating Button */
@@ -315,18 +315,74 @@
   background: #ddd;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   #ai-chat-window {
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    max-height: 100%;
-    border-radius: 0;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 80vh !important; /* Standard height for mobile chatbots */
+    max-height: 80vh !important;
+    border-radius: 24px 24px 0 0 !important;
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.15);
+    transform: translateY(100%);
+  }
+
+  #ai-chat-window.open {
+    transform: translateY(0) !important;
+  }
+
+  .ai-chat-header {
+    padding: 15px 20px;
+    background: var(--chat-secondary);
+    border-radius: 24px 24px 0 0;
+  }
+
+  .ai-chat-avatar {
+    width: 35px;
+    height: 35px;
+  }
+
+  .ai-chat-header-text h3 {
+    font-size: 1rem;
+  }
+
+  .ai-chat-messages {
+    padding: 15px;
+    background-color: #fcfcfc;
+  }
+
+  .ai-message {
+    max-width: 90%;
+    font-size: 0.92rem;
+    padding: 11px 15px;
+  }
+
+  .ai-chat-input-area {
+    padding: 15px !important;
+    border-top: 1px solid #f0f0f0;
+    background: white;
+    /* Ensure it works with virtual keyboards */
+    position: relative;
+    z-index: 10;
+  }
+
+  .ai-chat-input {
+    font-size: 16px !important; /* Critical to prevent iOS auto-zoom */
+    padding: 12px 18px;
+    height: 48px;
+  }
+
+  .ai-chat-send {
+    width: 48px;
+    height: 48px;
   }
 
   #ai-chat-launcher {
     bottom: 20px;
     right: 20px;
+    width: 55px;
+    height: 55px;
   }
 }
